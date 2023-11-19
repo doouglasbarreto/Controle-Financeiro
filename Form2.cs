@@ -1,44 +1,50 @@
-﻿using Microsoft.Data.Sqlite;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.Data.SQLite;
 using System.Windows.Forms;
 
 namespace Controle_Financeiro
 {
     public partial class Form2 : Form
     {
+        private ConnectionFactory connector = ConnectionFactory.Instance;
         public Form2()
         {
             InitializeComponent();
+            connector.TestConnection();
+            
+            //consultaBanco();
         }
-        public void BuscarValor()
+
+
+        /*public void consultaBanco()
         {
-            string querySQL = "SELECT nome FROM cadastro WHERE id = 1;";
-
-            using (SqliteConnection conexao = new SqliteConnection("Data Source=banco.db"))
+            try
             {
-                conexao.Open();
-
-                using (SqliteCommand comando = new SqliteCommand(querySQL, conexao))
+                using (SQLiteConnection conn = connector.GetConnection())
                 {
-                    using (SqliteDataReader dados = comando.ExecuteReader())
-                    {
-                        string nome = "";
+                    conn.Open();
 
-                        while (dados.Read())
+                    using (SQLiteCommand cmd = new SQLiteCommand("SELECT nome FROM cadastro WHERE id = 1", conn))
+                    using (SQLiteDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
                         {
-                            nome = dados.GetString(0);
-                            label1.Text = nome;
+                            label1.Text = dr["nome"].ToString();
+                        }
+                        else
+                        {
+                            // Se não houver resultados, você pode definir um valor padrão ou tratar conforme necessário
+                            label1.Text = "Registro não encontrado";
                         }
                     }
                 }
             }
-        }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro na consulta ao banco de dados: " + ex.Message);
+            }
+        }*/
+
+        
     }
 }
