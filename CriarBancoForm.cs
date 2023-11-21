@@ -87,10 +87,12 @@ namespace Controle_Financeiro
                 case 3:
                     CriarTriggerCalcularDiasAtraso();
                     break;
+                case 4:
+                    informaProgesso.Text = "Todos os objetos do banco compilados...";
+                    break;
                 default:
                     // Todos os métodos foram executados, pare o timer
                     timer1.Stop();
-                    informaProgesso.Text = "Todos os objetos do banco compilados...";
                     MessageBox.Show("Processo concluído com sucesso!");
                     caminhoDoBanco.Text = "Caminho do Banco de Dados: " + ConnectionFactory.Instance.ConnectionString;
                     btnCancelar.Enabled = false;
@@ -98,11 +100,10 @@ namespace Controle_Financeiro
                     btnAbrir.Enabled = true;
                     btnAbrir.Visible = true;
                     btnAbrir.Focus();
-
                     break;
             }
 
-
+            Thread.Sleep(600);
             // Atualize a barra de progresso
             int novoValor = (progressoAtual + 1) * (100 / 4);
 
