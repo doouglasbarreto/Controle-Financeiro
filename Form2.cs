@@ -12,11 +12,11 @@ namespace Controle_Financeiro
             InitializeComponent();
             connector.TestConnection();
             
-            //consultaBanco();
+            consultaBanco();
         }
 
 
-        /*public void consultaBanco()
+        public void consultaBanco()
         {
             try
             {
@@ -43,7 +43,7 @@ namespace Controle_Financeiro
             {
                 MessageBox.Show("Erro na consulta ao banco de dados: " + ex.Message);
             }
-        }*/
+        }
 
         
     }

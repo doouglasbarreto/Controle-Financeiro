@@ -52,8 +52,17 @@
             excluirGrupoToolStripMenuItem = new ToolStripMenuItem();
             contasToolStripMenuItem = new ToolStripMenuItem();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
+            sQLToolStripMenuItem = new ToolStripMenuItem();
+            criarBancoToolStripMenuItem = new ToolStripMenuItem();
+            criarTabelaToolStripMenuItem = new ToolStripMenuItem();
+            inserirRegistroTesteToolStripMenuItem = new ToolStripMenuItem();
+            cosultarRegistroToolStripMenuItem = new ToolStripMenuItem();
+            criarTabelaUsuáriosToolStripMenuItem = new ToolStripMenuItem();
+            criarTabelaContasToolStripMenuItem = new ToolStripMenuItem();
+            criarTriggersToolStripMenuItem = new ToolStripMenuItem();
             vScrollBar1 = new VScrollBar();
             toolTipInfo = new ToolTip(components);
+            verificarCaminhoDoBancoToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -104,7 +113,7 @@
             // 
             menuStrip1.BackColor = SystemColors.ActiveCaption;
             menuStrip1.Dock = DockStyle.Fill;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, cadastroToolStripMenuItem, contasToolStripMenuItem, configuraçõesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, cadastroToolStripMenuItem, contasToolStripMenuItem, configuraçõesToolStripMenuItem, sQLToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 25);
@@ -226,6 +235,62 @@
             configuraçõesToolStripMenuItem.Size = new Size(96, 21);
             configuraçõesToolStripMenuItem.Text = "Configurações";
             // 
+            // sQLToolStripMenuItem
+            // 
+            sQLToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { criarBancoToolStripMenuItem, criarTabelaToolStripMenuItem, inserirRegistroTesteToolStripMenuItem, cosultarRegistroToolStripMenuItem, criarTabelaUsuáriosToolStripMenuItem, criarTabelaContasToolStripMenuItem, criarTriggersToolStripMenuItem, verificarCaminhoDoBancoToolStripMenuItem });
+            sQLToolStripMenuItem.Name = "sQLToolStripMenuItem";
+            sQLToolStripMenuItem.Size = new Size(40, 21);
+            sQLToolStripMenuItem.Text = "SQL";
+            // 
+            // criarBancoToolStripMenuItem
+            // 
+            criarBancoToolStripMenuItem.Name = "criarBancoToolStripMenuItem";
+            criarBancoToolStripMenuItem.Size = new Size(219, 22);
+            criarBancoToolStripMenuItem.Text = "Criar Banco";
+            criarBancoToolStripMenuItem.Click += criarBancoToolStripMenuItem_Click;
+            // 
+            // criarTabelaToolStripMenuItem
+            // 
+            criarTabelaToolStripMenuItem.Name = "criarTabelaToolStripMenuItem";
+            criarTabelaToolStripMenuItem.Size = new Size(219, 22);
+            criarTabelaToolStripMenuItem.Text = "Criar Tabela";
+            criarTabelaToolStripMenuItem.Click += criarTabelaToolStripMenuItem_Click;
+            // 
+            // inserirRegistroTesteToolStripMenuItem
+            // 
+            inserirRegistroTesteToolStripMenuItem.Name = "inserirRegistroTesteToolStripMenuItem";
+            inserirRegistroTesteToolStripMenuItem.Size = new Size(219, 22);
+            inserirRegistroTesteToolStripMenuItem.Text = "Inserir Registro Teste";
+            inserirRegistroTesteToolStripMenuItem.Click += inserirRegistroTesteToolStripMenuItem_Click;
+            // 
+            // cosultarRegistroToolStripMenuItem
+            // 
+            cosultarRegistroToolStripMenuItem.Name = "cosultarRegistroToolStripMenuItem";
+            cosultarRegistroToolStripMenuItem.Size = new Size(219, 22);
+            cosultarRegistroToolStripMenuItem.Text = "Cosultar Registro";
+            cosultarRegistroToolStripMenuItem.Click += cosultarRegistroToolStripMenuItem_Click;
+            // 
+            // criarTabelaUsuáriosToolStripMenuItem
+            // 
+            criarTabelaUsuáriosToolStripMenuItem.Name = "criarTabelaUsuáriosToolStripMenuItem";
+            criarTabelaUsuáriosToolStripMenuItem.Size = new Size(219, 22);
+            criarTabelaUsuáriosToolStripMenuItem.Text = "Criar Tabela Usuários";
+            criarTabelaUsuáriosToolStripMenuItem.Click += criarTabelaUsuáriosToolStripMenuItem_Click;
+            // 
+            // criarTabelaContasToolStripMenuItem
+            // 
+            criarTabelaContasToolStripMenuItem.Name = "criarTabelaContasToolStripMenuItem";
+            criarTabelaContasToolStripMenuItem.Size = new Size(219, 22);
+            criarTabelaContasToolStripMenuItem.Text = "Criar Tabela Contas";
+            criarTabelaContasToolStripMenuItem.Click += criarTabelaContasToolStripMenuItem_Click;
+            // 
+            // criarTriggersToolStripMenuItem
+            // 
+            criarTriggersToolStripMenuItem.Name = "criarTriggersToolStripMenuItem";
+            criarTriggersToolStripMenuItem.Size = new Size(219, 22);
+            criarTriggersToolStripMenuItem.Text = "Criar Triggers";
+            criarTriggersToolStripMenuItem.Click += criarTriggersToolStripMenuItem_Click;
+            // 
             // vScrollBar1
             // 
             vScrollBar1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
@@ -238,6 +303,13 @@
             // toolTipInfo
             // 
             toolTipInfo.ToolTipIcon = ToolTipIcon.Info;
+            // 
+            // verificarCaminhoDoBancoToolStripMenuItem
+            // 
+            verificarCaminhoDoBancoToolStripMenuItem.Name = "verificarCaminhoDoBancoToolStripMenuItem";
+            verificarCaminhoDoBancoToolStripMenuItem.Size = new Size(219, 22);
+            verificarCaminhoDoBancoToolStripMenuItem.Text = "Verificar caminho do Banco";
+            verificarCaminhoDoBancoToolStripMenuItem.Click += verificarCaminhoDoBancoToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -283,5 +355,14 @@
         private ToolStripMenuItem toolStripMenuItem2;
         private ToolStripMenuItem toolStripMenuItem3;
         private VScrollBar vScrollBar1;
+        private ToolStripMenuItem sQLToolStripMenuItem;
+        private ToolStripMenuItem criarBancoToolStripMenuItem;
+        private ToolStripMenuItem criarTabelaToolStripMenuItem;
+        private ToolStripMenuItem inserirRegistroTesteToolStripMenuItem;
+        private ToolStripMenuItem cosultarRegistroToolStripMenuItem;
+        private ToolStripMenuItem criarTabelaUsuáriosToolStripMenuItem;
+        private ToolStripMenuItem criarTabelaContasToolStripMenuItem;
+        private ToolStripMenuItem criarTriggersToolStripMenuItem;
+        private ToolStripMenuItem verificarCaminhoDoBancoToolStripMenuItem;
     }
 }
